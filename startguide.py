@@ -42,3 +42,23 @@ print(text_stim_circuit)
 text_qasm_circuit = stim_circuit.to_qasm(open_qasm_version=3, skip_dets_and_obs=True)
 
 stim_circuit.diagram("timeline-svg-html")
+
+from deltakit_circuit import gates
+from deltakit_decode.noise_sources import StimNoise
+from deltakit_explorer.qpu import QPU, NativeGateSetAndTimes, ToyNoise, NoiseParameters
+
+
+qpu_instance = QPU(
+    qubits=circuit.qubits,  # only qubits we need are defined
+    native_gates_and_times=NativeGateSetAndTimes(
+        # times are given approximately for a superconducting device
+        one_qubit_gates={gates.H: 20e-9, gates.SQRT_X: 20e-09},
+        two_qubit_gates={gates.CZ: 30e-9},
+        reset_gates={gates.RZ: 160e-9},
+        measurement_gates={gates.MZ: 500e-9, gates.MRZ: 500e-9},
+    ),
+    # let's keep it noiseless for now, you may omit this line
+    noise_model=NoiseParameters(),
+)
+
+deltakit_compiled_circuit = qpu_instance.compile_circuit(circuit)
