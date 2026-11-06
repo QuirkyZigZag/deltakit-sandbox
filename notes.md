@@ -72,3 +72,5 @@ OBSERVABLE_INCLUDE(0) rec[-1]
 DETECTOR(1, 0, 0) rec[-5] rec[-1] rec[-2]
 DETECTOR(3, 0, 0) rec[-4] rec[-3] rec[-2]
 SHIFT_COORDS(0, 0, 1)
+
+![alt text](image.png)

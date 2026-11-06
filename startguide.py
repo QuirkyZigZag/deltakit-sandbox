@@ -3,7 +3,14 @@ from deltakit import Client
 from deltakit_circuit import Coord2D
 from deltakit_explorer.codes import css_code_memory_circuit, RepetitionCode, RotatedPlanarCode
 from deltakit_circuit.gates import PauliBasis
+
+from deltakit_circuit import gates
+from deltakit_decode.noise_sources import StimNoise
+from deltakit_explorer.qpu import QPU, NativeGateSetAndTimes, ToyNoise, NoiseParameters
+
 Client.set_token("GGuRx95pgWcws5ILnhwC_5nt2K5F9S6U")
+
+
 
 cloud = Client.get_instance()
 
@@ -43,9 +50,6 @@ text_qasm_circuit = stim_circuit.to_qasm(open_qasm_version=3, skip_dets_and_obs=
 
 stim_circuit.diagram("timeline-svg-html")
 
-from deltakit_circuit import gates
-from deltakit_decode.noise_sources import StimNoise
-from deltakit_explorer.qpu import QPU, NativeGateSetAndTimes, ToyNoise, NoiseParameters
 
 
 qpu_instance = QPU(
@@ -62,3 +66,11 @@ qpu_instance = QPU(
 )
 
 deltakit_compiled_circuit = qpu_instance.compile_circuit(circuit)
+
+mapping = {
+    q: q.unique_identifier[0]
+    for q in circuit.qubits
+}
+stim_circuit = deltakit_compiled_circuit.as_stim_circuit(mapping)
+stim_circuit.diagram("timeline-svg-html")
+display(stim_circuit.diagram("timeline-svg-html"))
