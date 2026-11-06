@@ -74,3 +74,34 @@ DETECTOR(3, 0, 0) rec[-4] rec[-3] rec[-2]
 SHIFT_COORDS(0, 0, 1)
 
 ![alt text](image.png)
+
+
+# Mølmer–Sørensen gate :
+
+(MS gate)
+
+Watched a Quantum "Deep Dive" Podcast video on it
+
+
+## My notes/ideas on it:
+
+### Quantum challenge
+
+"Entanglement is the operative currency of a qpu"
+
+more precision
+
+
+
+### The Arena:
+
+### Trapped Ions:
+
+### MS solution
+
+### how it works
+
+### why it dominates
+
+### Future prospectives
+
