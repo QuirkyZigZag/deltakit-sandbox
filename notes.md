@@ -92,16 +92,47 @@ Watched a Quantum "Deep Dive" Podcast video on it
 more precision
 
 
+Ions - atoms with electric charge
 
-### The Arena:
+Trapped Ions are nearly perfect, identical qubits
 
-### Trapped Ions:
+can be held in stable electromagnetic traps
 
-### MS solution
 
-### how it works
+Even though trapped separately, they can communicate with -phonons- which are shared vibrations as all the ions are sitting in the same trap.
 
-### why it dominates
+Acts as  ahigh speed communication channel for qubits
 
-### Future prospectives
+"Quantum databus"
+
+
+Gate that is robust against motion? 
+
+MS gate: universal entangler designed for real world messy scalable experiments
+
+### How it works
+
+
+Uses Lasers
+
+Bichromatic lasers - 
+
+Two laser frequencies, tuned symmetrically just above and below a key of vibrational frequency of the ions
+
+![alt text](image-1.png)
+
+journey creates a geometric phase which entangles the qubit states
+
+What about exact time? how ensured and/or calculated
+
+### Practical advantages
+
+
+robust against heat can entangle many qubits simultaneously
+
+does not need to be cooled to milli Kelvin
+
+there is >99.9% accuracy so only 1/1000 are errors
+
+Smashes through fault tolerance threshold of 1%
 
